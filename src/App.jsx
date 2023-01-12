@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./Routes/Home";
 import React from "react";
 import Login from "./Routes/Login";
+import Links from "./components/Links";
 import axios from "axios";
 import Register from "./Routes/Register";
 import Forget from "./Routes/Forget";
@@ -27,6 +28,7 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/Register" element={<Register />} />
         <Route path="/Forget" element={<Forget />} />
+        <Route path="/:shortLink" element={<Links />} />
       </Routes>
     </div>
   );

@@ -5,6 +5,7 @@ import Shorty from "../components/Shorty";
 import Made from "../components/Made";
 
 import HowItWorks from "../components/HowItWorks";
+import { Recent } from "../components/Recent";
 function Home() {
   return (
     <div className="homeContainer">
@@ -16,6 +17,7 @@ function Home() {
         <Logo />
         <Shorty />
       </div>
+      <Recent />
       <div className="footerContainer">
         <Made />
       </div>

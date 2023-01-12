@@ -49,7 +49,7 @@ export const Recent = ({ data, shortLink }) => {
       <div style={styles.content}>
         <div style={styles.key}>Богино холбоос:</div>
         <div style={styles.copyContainer}>
-        <div>{localhost:3000/${shortLink}}</div>
+          <div style={styles.value}>{`localhost:3000/${shortLink}`}</div>
           <button style={styles.copyButton}>Хуулж авах</button>
         </div>
       </div>
