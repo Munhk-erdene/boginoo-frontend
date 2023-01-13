@@ -7,17 +7,31 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+import { useNavigate } from "react-router-dom";
 function Register() {
   const mail = useRef();
   const password = useRef();
+  const rePassword = useRef();
+  const navigate = useNavigate();
 
   const clickHandler = async () => {
-    await instance
-      .post("", {
-        mail: mail.current.value,
-        password: password.current.value,
-      })
-      .catch((e) => toast.error(e.response.data.data));
+    if (password.current.value === rePassword.current.value) {
+      try {
+        await instance.post("/Data", {
+          mail: mail.current.value,
+          password: password.current.value,
+        });
+        toast("Succesfull");
+        navigate("/Login");
+      } catch (error) {
+        toast.error(error.response.data.data);
+        console.log(error.response.data.data);
+      }
+    } else {
+      toast.error("Nuuts ug davhardsn baina");
+      navigate("/Login");
+    }
   };
 
   return (
@@ -55,7 +69,12 @@ function Register() {
           </div>
           <div className="two">
             <div className="text">Нууц үгээ давтна уу?</div>
-            <input className="input" type="text" placeholder="••••••••••" />
+            <input
+              ref={rePassword}
+              className="input"
+              type="text"
+              placeholder="••••••••••"
+            />
           </div>
         </div>
         <div

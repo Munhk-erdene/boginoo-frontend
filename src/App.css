@@ -171,5 +171,41 @@ line-height: 18px;
 text-decoration-line: underline;
 margin-top: 20px;
 color: #02B589;
+}
+.send{
+width: 240px;
+height: 50px;
 
+font-family: 'Ubuntu';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 25px;
+/* or 156% */
+
+text-align: center;
+
+color: #000000;
+
+}
+.sendTwo{
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+flex-direction: row;
+align-items: center;
+width: 381px;
+height: 43px;
+background: #02B589;
+border-radius: 100px;
+font-family: 'Ubuntu';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 23px;
+text-transform: uppercase;
+color: #FFFFFF;
+flex: none;
+order: 0;
+flex-grow: 0;
 }

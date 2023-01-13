@@ -6,13 +6,13 @@ import { useEffect } from "react";
 export const Link = () => {
   const params = useParams();
   const getData = async () => {
-    const res = await instance.get(`/links/${params.shortUrl}`);
-    window.location.replace(res.data.data.LongUrl);
+    const res = await instance.get(`/Link/${params.shortLink}`);
+    window.location.replace(res.data.link.longLink);
   };
   useEffect(() => {
     getData();
   }, []);
-  return <></>;
+  return <div></div>;
 };
 
 export default Link;

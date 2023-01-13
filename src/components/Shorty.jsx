@@ -1,29 +1,30 @@
 import React from "react";
-import { instanceTwo } from "../App";
-import { useRef } from "react";
+import { instance } from "../App";
+import { Resent } from "./Resent";
+import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 function Shorty() {
-  const uri = useRef();
-
-  const clickHandler = async () => {
-    await instanceTwo
-      .post("", {
-        longLink: uri.current.value,
-      })
-      .catch((e) => toast.error(e.response.data.data));
+  const [link, setLink] = useState();
+  const [url, setUrl] = useState();
+  const CreateLink = async () => {
+    const res = await instance.post("/Link", {
+      longLink: link,
+    });
+    setUrl(res.data.link);
   };
   return (
     <div className="shortyContainer">
       <input
-        ref={uri}
+        onChange={(e) => setLink(e.target.value)}
         className="boginooInput"
         type="text"
         placeholder="https://www.web-huudas.mn"
       />
-      <button onClick={clickHandler} className="boginooButton">
+      <button onClick={CreateLink} className="boginooButton">
         Богиносгох
       </button>
+      {link && <Resent data={link} shortLink={url} />}
       <ToastContainer />
     </div>
   );
