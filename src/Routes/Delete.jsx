@@ -6,8 +6,8 @@ import DeleteTwo from "./DeleteTwo";
 const Delete = () => {
   const [data, setData] = useState();
   const getData = async () => {
-    const res = await instance.get("/Data");
-    setData(res.data.data);
+    const res = await instance.get("/Link");
+    setData(res.data.link);
   };
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const Delete = () => {
         data.map((data) => {
           return (
             <div style={{ display: "flex" }}>
-              <div>{data.mail}</div>
+              <div>{data.shortLink}</div>
               <DeleteTwo value={data} />
             </div>
           );

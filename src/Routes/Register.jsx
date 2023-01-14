@@ -22,15 +22,14 @@ function Register() {
           mail: mail.current.value,
           password: password.current.value,
         });
-        toast("Succesfull");
+        alert("Amjilttai burtguulev");
         navigate("/Login");
       } catch (error) {
         toast.error(error.response.data.data);
         console.log(error.response.data.data);
       }
     } else {
-      toast.error("Nuuts ug davhardsn baina");
-      navigate("/Login");
+      toast.error("Nuuts ug zurud baina");
     }
   };
 

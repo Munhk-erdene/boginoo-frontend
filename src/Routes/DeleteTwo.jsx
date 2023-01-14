@@ -1,7 +1,7 @@
 import { instance } from "../App";
 const Remove = ({ value }) => {
   const remove = async () => {
-    await instance.delete(`/Data/${value._id}`);
+    await instance.delete(`/Link/${value._id}`);
   };
   return (
     <div>

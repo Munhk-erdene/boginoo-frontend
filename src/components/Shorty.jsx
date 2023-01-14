@@ -11,7 +11,7 @@ function Shorty() {
     const res = await instance.post("/Link", {
       longLink: link,
     });
-    setUrl(res.data.link);
+    setUrl(res.data.link.shortLink);
   };
   return (
     <div className="shortyContainer">

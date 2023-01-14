@@ -8,7 +8,9 @@ export const Link = () => {
   const getData = async () => {
     const res = await instance.get(`/Link/${params.shortLink}`);
     window.location.replace(res.data.link.longLink);
+    console.log(res);
   };
+
   useEffect(() => {
     getData();
   }, []);

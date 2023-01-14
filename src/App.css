@@ -209,3 +209,37 @@ flex: none;
 order: 0;
 flex-grow: 0;
 }
+.shortContainer{
+  display: flex;
+  flex-direction: column;
+  margin:20px
+}
+.links{
+width: 141px;
+height: 18px;
+font-family: 'Ubuntu';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 18px;
+
+color: #000000;
+
+opacity: 0.5;
+}
+.data{
+  overflow: scroll;
+width: 304px;
+height: 23px;
+font-family: 'Ubuntu';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 23px;
+/* identical to box height */
+color: #000000;
+}
+.column{
+  display: flex;
+  margin-top: 10px;
+}

@@ -4,6 +4,7 @@ import Logo from "../components/Logo";
 import Shorty from "../components/Shorty";
 import Made from "../components/Made";
 import HowItWorks from "../components/HowItWorks";
+
 function Home() {
   return (
     <div className="homeContainer">
