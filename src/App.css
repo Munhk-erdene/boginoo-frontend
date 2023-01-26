@@ -243,3 +243,15 @@ color: #000000;
   display: flex;
   margin-top: 10px;
 }
+.history{
+  width: 274px;
+  height: 23px;
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  text-transform: uppercase;
+  color: #02b589;
+  text-decoration: none;
+}

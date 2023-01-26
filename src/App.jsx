@@ -8,6 +8,7 @@ import Link from "./Routes/Link";
 import Delete from "./Routes/Delete";
 import Register from "./Routes/Register";
 import Forget from "./Routes/Forget";
+import History from "./Routes/History";
 export const instance = axios.create({
   baseURL: "http://localhost:8000",
   headers: {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/Forget" element={<Forget />} />
         <Route path="/:shortLink" element={<Link />} />
         <Route path="/Delete" element={<Delete />} />
+        <Route path="/History" element={<History />} />
       </Routes>
     </div>
   );

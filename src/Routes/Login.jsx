@@ -4,30 +4,23 @@ import Logo from "../components/Logo";
 import { Link } from "react-router-dom";
 import Made from "../components/Made";
 import { instance } from "../App";
-import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 
 function Login() {
-  const email = useRef();
-  const password = useRef();
-  const [data, setData] = useState();
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
   const navigate = useNavigate();
-
-  const SuccesfullLogin = async () => {
+  const LoginPost = async () => {
     try {
       const res = await instance.post("/Data", {
-        mail: email.current.value,
-        password: password.current.value,
+        mail: email,
+        password: password,
       });
-      setData(res.data.data);
-      if (
-        data.mail === email.current.value &&
-        data.password === password.current.value
-      ) {
-        alert("Amjilttai orlo");
-        navigate("/");
-      }
+      alert("Succesfull");
+      navigate("/");
+
+      window.localStorage.setItem("token", JSON.stringify(res.data.token));
+      window.localStorage.setItem("user_id", JSON.stringify(res.data.data._id));
     } catch (error) {}
   };
   return (
@@ -45,7 +38,7 @@ function Login() {
           <div className="two">
             <div className="text">Цахим хаяг</div>
             <input
-              ref={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="input"
               type="text"
               placeholder="name@mail.domain"
@@ -54,7 +47,7 @@ function Login() {
           <div className="two">
             <div className="text">Нууц үг</div>
             <input
-              ref={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="input"
               type="text"
               placeholder="••••••••••"
@@ -66,7 +59,7 @@ function Login() {
           <Link to="/Forget">Нууц үгээ мартсан</Link>
         </div>
         <div
-          onClick={SuccesfullLogin}
+          onClick={LoginPost}
           style={{ width: 381, marginTop: 20 }}
           className="signUpDiv"
         >

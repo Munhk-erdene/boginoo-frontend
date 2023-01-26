@@ -14,14 +14,14 @@ function Register() {
   const password = useRef();
   const rePassword = useRef();
   const navigate = useNavigate();
-
   const clickHandler = async () => {
     if (password.current.value === rePassword.current.value) {
       try {
-        await instance.post("/Data", {
+        const res = await instance.post("/Data/Post", {
           mail: mail.current.value,
           password: password.current.value,
         });
+        console.log(res.data);
         alert("Amjilttai burtguulev");
         navigate("/Login");
       } catch (error) {
@@ -29,7 +29,7 @@ function Register() {
         console.log(error.response.data.data);
       }
     } else {
-      toast.error("Nuuts ug zurud baina");
+      toast.error("Nuuts ug zurud baina   ");
     }
   };
 

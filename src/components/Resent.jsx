@@ -1,5 +1,5 @@
 import React from "react";
-export const Resent = ({ data, shortLink, longLink }) => {
+export const Resent = ({ data, shortLink }) => {
   return (
     <div className="shortContainer">
       <div className="column">
